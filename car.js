@@ -12,7 +12,7 @@ class Car{
         this.angle=0;
         this.damaged=false;
 
-        this.useBrain=controltype=="AI";
+        this.useBrain = controltype === "AI";
 
         if(controltype!="DUMMY"){
             this.sensor=new Sensor(this);
@@ -20,6 +20,13 @@ class Car{
                 [this.sensor.rayCount,6,4]
             );
         }
+
+        if(this.useBrain && this.sensor){
+            this.brain=new NeuralNetwork(
+                [this.sensor.rayCount,6,4]
+            );
+        }
+        
         this.controls=new Controls(controltype);
     }
 
