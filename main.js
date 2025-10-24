@@ -13,19 +13,11 @@ const traffic=[
     new Car(road.getLaneCenter(1),-100,30,50,"DUMMY",2)
 ];
 
-//animate();
-requestAnimationFrame(animate);
+animate();
 
 function animate(time = 0){
     carCanvas.height=window.innerHeight;
     networkCanvas.height=window.innerHeight;
-
-    // debug logs to verify objects exist
-    // remove these after you confirm values in the console
-    console.log('networkCanvas', networkCanvas);
-    console.log('networkCtx', !!networkCtx);
-    console.log('car.brain', car.brain);
-    console.log('car.brain.levels', car.brain && car.brain.levels && car.brain.levels.length);
 
     for(let i=0;i<traffic.length;i++){
         traffic[i].update(road.borders,[]);
@@ -43,12 +35,7 @@ function animate(time = 0){
     
     carCtx.restore();
 
-    networkCtx.clearRect(0,0,networkCanvas.width,networkCanvas.height);
-
-    if(car.brain && car.brain.levels){
-        networkCtx.lineDashOffset=-time/50;
-        Visualizer.drawNetwork(networkCtx,car.brain);
-    }
-
+    networkCtx.lineDashOffset=-time/50;
+    Visualizer.drawNetwork(networkCtx,car.brain);
     requestAnimationFrame(animate);
 }

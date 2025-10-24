@@ -1,7 +1,5 @@
 class Visualizer{
     static drawNetwork(ctx,network){
-        const levels = network.levels || network.Levels;
-        if(!levels) return;
 
         const margin=50;
         const left=margin;
@@ -9,7 +7,7 @@ class Visualizer{
         const width=ctx.canvas.width-margin*2;
         const height=ctx.canvas.height-margin*2;
 
-        const levelHeight=height/levels.length;
+        const levelHeight=height/network.levels.length;
 
         for(let i=network.levels.length-1;i>=0;i--){
             const levelTop=top+

@@ -12,7 +12,7 @@ class Car{
         this.angle=0;
         this.damaged=false;
 
-        this.useBrain = controltype === "AI";
+        this.useBrain=controltype=="AI";
 
         if(controltype!="DUMMY"){
             this.sensor=new Sensor(this);
@@ -20,13 +20,6 @@ class Car{
                 [this.sensor.rayCount,6,4]
             );
         }
-
-        if(this.useBrain && this.sensor){
-            this.brain=new NeuralNetwork(
-                [this.sensor.rayCount,6,4]
-            );
-        }
-        
         this.controls=new Controls(controltype);
     }
 
@@ -137,7 +130,7 @@ class Car{
         ctx.beginPath();
         ctx.moveTo(this.polygon[0].x,this.polygon[0].y);
         for(let i=1;i<this.polygon.length;i++){
-             ctx.lineTo(this.polygon[i].x,this.polygon[i].y);
+            ctx.lineTo(this.polygon[i].x,this.polygon[i].y);
         }
         ctx.fill();
        
