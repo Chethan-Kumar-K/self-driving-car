@@ -2,7 +2,33 @@ body{
     margin: 0;
     background: darkgray;
     overflow: hidden;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#verticalButtons{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    gap: 10px;
+}
+
+button{
+    background-color: burlywood;
+    padding: 10px;
+    font-size: 16px;
+    border:none;
+    border-radius:5px;
+    background: lightgray;
+    cursor: pointer;
+}
+
+button:hover{
+    background:blue;
 }
 
 #networkCanvas{
