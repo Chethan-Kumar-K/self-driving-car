@@ -23,12 +23,14 @@ if(localStorage.getItem("bestBrain")){
 }
 
 const traffic=[
-    new Car(road.getLaneCenter(0),-100,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-300,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(0),-500,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(1),-600,30,50,"DUMMY",2),
-    new Car(road.getLaneCenter(2),-800,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(2),-250,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(1),-120,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(2),-370,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(0),-450,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(1),-555,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(2),-627,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(0),-700,30,50,"DUMMY",2),
+    new Car(road.getLaneCenter(2),-888,30,50,"DUMMY",2),
 ];
 
 animate();
